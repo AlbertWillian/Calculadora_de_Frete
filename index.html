@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Frete Rodoviário</title>
+    <link rel="stylesheet" href="net.css">
+</head>
+<body>
+    <header class="topo">
+        <div>
+            <p class="eyebrow">SENAI • PROGRAMADOR WEB</p>
+            <h1>Calculadora de Frete Rodoviário</h1>
+            <p>Cotação e memória de cálculo.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <form id="formFrete" novalidate>
+            <section class="card">
+                
+                <h2>
+                    Dados da cotação
+                </h2>
+
+                <div class="grid">
+                    <div class="campo campo-full">
+                        <label for="cliente">Nome / Razão social do cliente *</label>
+                        <input type="text" id="cliente" placeholder="Ex.: Empresa ABC Ltda.">
+                    </div>
+
+                    <div class="campo">
+                        <label for="origem">Cidade de origem *</label>
+                        <input type="text" id="origem" placeholder="Ex.: Salvador">
+                    </div>
+
+                    <div class="campo">
+                        <label for="destino">Cidade de destino *</label>
+                        <input type="text" id="destino" placeholder="Ex.: Feira de Santana">
+                    </div>
+
+                    <div class="campo">
+                        <label for="distancia">Distância estimada (km) *</label>
+                        <input type="number" id="distancia" min="0.01" step="0.01" placeholder="Ex.: 120">
+                    </div>
+
+                    <div class="campo">
+                        <label for="mercadoria">Descrição da mercadoria *</label>
+                        <input type="text" id="mercadoria" placeholder="Ex.: Caixas de alimentos">
+                    </div>
+
+                    <div class="campo">
+                        <label for="notaFiscal">Valor da nota fiscal (R$) *</label>
+                        <input type="number" id="notaFiscal" min="0.01" step="0.01" placeholder="Ex.: 5000">
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Dados da carga</h2>
+
+                <div class="grid">
+                    <div class="campo">
+                        <label for="volumes">Quantidade de volumes *</label>
+                        <input type="number" id="volumes" min="1" step="1" placeholder="Ex.: 20">
+                    </div>
+
+                    <div class="campo">
+                        <label for="pesoReal">Peso real total (kg) *</label>
+                        <input type="number" id="pesoReal" min="0.01" step="0.01" placeholder="Ex.: 400">
+                    </div>
+
+                    <div class="campo">
+                        <label for="comprimento">Comprimento por volume (m) *</label>
+                        <input type="number" id="comprimento" min="0.01" step="0.01" placeholder="Ex.: 0.50">
+                    </div>
+
+                    <div class="campo">
+                        <label for="largura">Largura por volume (m) *</label>
+                        <input type="number" id="largura" min="0.01" step="0.01" placeholder="Ex.: 0.40">
+                    </div>
+
+                    <div class="campo">
+                        <label for="altura">Altura por volume (m) *</label>
+                        <input type="number" id="altura" min="0.01" step="0.01" placeholder="Ex.: 0.30">
+                    </div>
+
+                    <div class="campo">
+                        <label for="fatorCubagem">Fator de cubagem (kg/m³) *</label>
+                        <input type="number" id="fatorCubagem" min="0.01" step="0.01" value="300">
+                        <small>Modal Rodoviário: 300 kg/m³.</small>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Parâmetros do frete</h2>
+                <p class="observacao">
+                    Os valores abaixo são preenchidos pelo usuário.
+                </p>
+
+                <div class="grid">
+                    <div class="campo">
+                        <label for="tarifaKg">Tarifa do frete-peso (R$/kg) *</label>
+                        <input type="number" id="tarifaKg" min="0.01" step="0.01" placeholder="Ex.: 2.50">
+                    </div>
+
+                    <div class="campo">
+                        <label for="freteMinimo">Frete mínimo (R$) *</label>
+                        <input type="number" id="freteMinimo" min="0" step="0.01" placeholder="Ex.: 500">
+                    </div>
+
+                    <div class="campo">
+                        <label for="adValorem">Ad Valorem (%)</label>
+                        <input type="number" id="adValorem" min="0" max="100" step="0.01" value="0">
+                    </div>
+
+                    <div class="campo">
+                        <label for="gris">GRIS (%)</label>
+                        <input type="number" id="gris" min="0" max="100" step="0.01" value="0">
+                    </div>
+
+                    <div class="campo">
+                        <label for="pedagio">Pedágio (R$)</label>
+                        <input type="number" id="pedagio" min="0" step="0.01" value="0">
+                    </div>
+
+                    <div class="campo">
+                        <label for="outrasTaxas">Outras taxas (R$)</label>
+                        <input type="number" id="outrasTaxas" min="0" step="0.01" value="0">
+                    </div>
+                </div>
+            </section>
+
+            <div id="mensagem" class="mensagem" role="alert" aria-live="polite"></div>
+
+            <div class="acoes">
+                <button type="submit" class="btn btn-principal">Calcular frete</button>
+                <button type="button" id="btnLimpar" class="btn btn-secundario">Limpar</button>
+            </div>
+        </form>
+
+        <section id="resultado" class="card resultado" hidden aria-live="polite"></section>
+    </main>
+
+    <footer>
+        <p>© Albert Willian – SENAI 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

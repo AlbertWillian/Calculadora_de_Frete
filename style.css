@@ -1,0 +1,382 @@
+/* ==========================================================================
+   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS (NETFLIX DESIGN SYSTEM)
+   ========================================================================== */
+:root {
+  /* Paleta de Cores Netflix */
+  --netflix-red: #e50914;
+  --netflix-red-hover: #f40612;
+  --netflix-black: #141414;
+  --netflix-dark-gray: #181818;
+  --netflix-card-bg: #2f2f2f;
+  --netflix-input-bg: #333333;
+  --netflix-text: #ffffff;
+  --netflix-text-muted: #aaaaaa;
+  --netflix-border: #444444;
+
+  /* Variáveis de Suporte (Ajustadas para o Tema Dark) */
+  --netflix-green-bg: rgba(46, 125, 50, 0.2);
+  --netflix-green-border: #2e7d32;
+  --netflix-green-text: #4caf50;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+  --shadow-netflix: 0 8px 24px rgba(0, 0, 0, 0.7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--netflix-black);
+  color: var(--netflix-text);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. CABEÇALHO (HEADER)
+   ========================================================================== */
+.topo {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0) 100%),
+              radial-gradient(ellipse at center, rgba(229, 9, 20, 0.15) 0%, rgba(20, 20, 20, 0) 70%);
+  padding: 3rem 1.5rem 2rem 1.5rem;
+  text-align: center;
+  border-bottom: 2px solid var(--netflix-red);
+}
+
+.topo > div {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.topo .eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--netflix-red);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.topo h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.5rem;
+  color: var(--netflix-text);
+}
+
+.topo p {
+  font-size: 1rem;
+  color: var(--netflix-text-muted);
+}
+
+/* ==========================================================================
+   3. ESTRUTURA PRINCIPAL (LAYOUT)
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+/* Cards Estilo Netflix UI */
+.card {
+  background-color: var(--netflix-dark-gray);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-netflix);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--netflix-text);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Destaque vermelho ao lado dos títulos das seções */
+.card h2::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1.2rem;
+  background-color: var(--netflix-red);
+  border-radius: 2px;
+}
+
+.observacao {
+  font-size: 0.875rem;
+  color: var(--netflix-text-muted);
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   4. FORMULÁRIO E INPUTS
+   ========================================================================== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--netflix-text);
+  margin-bottom: 0.5rem;
+}
+
+.campo input {
+  padding: 0.9rem 1rem;
+  background-color: var(--netflix-input-bg);
+  border: 1px solid var(--netflix-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--netflix-text);
+  transition: var(--transition);
+}
+
+.campo input::placeholder {
+  color: #777777;
+}
+
+.campo input:focus {
+  outline: none;
+  background-color: #444444;
+  border-color: var(--netflix-red);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.campo small {
+  font-size: 0.75rem;
+  color: var(--netflix-text-muted);
+  margin-top: 0.35rem;
+}
+
+/* ==========================================================================
+   5. MENSAGENS E BOTÕES
+   ========================================================================== */
+.mensagem {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: none;
+}
+
+.mensagem:not(:empty) {
+  display: block;
+  background-color: rgba(229, 9, 20, 0.2);
+  color: #ff6b6b;
+  border: 1px solid var(--netflix-red);
+}
+
+.acoes {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  padding: 0.9rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Botão Principal - Netflix Red */
+.btn-principal {
+  background-color: var(--netflix-red);
+  color: var(--netflix-text);
+}
+
+.btn-principal:hover {
+  background-color: var(--netflix-red-hover);
+  transform: scale(1.02);
+}
+
+.btn-principal:active {
+  transform: scale(0.98);
+}
+
+/* Botão Secundário - Estilo Transparente / Cinza */
+.btn-secundario {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--netflix-text);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secundario:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+.btn-secundario:active {
+  transform: scale(0.98);
+}
+
+/* ==========================================================================
+   6. SEÇÃO DE RESULTADOS E TABELA (CORRIGIDOS)
+   ========================================================================== */
+.resultado[hidden] {
+  display: none;
+}
+
+/* Mobile-First: 2 colunas no celular */
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 18px 0 24px;
+}
+
+.indicador {
+  background: var(--netflix-card-bg);
+  border-radius: var(--radius-sm);
+  padding: 15px;
+  border: 1px solid var(--netflix-border);
+}
+
+.indicador span {
+  display: block;
+  color: var(--netflix-text-muted);
+  font-size: 0.85rem;
+}
+
+.indicador strong {
+  display: block;
+  color: var(--netflix-text);
+  font-size: 1.2rem;
+  margin-top: 3px;
+}
+
+.criterio {
+  background: var(--netflix-card-bg);
+  border-left: 4px solid var(--netflix-red);
+  padding: 12px 15px;
+  border-radius: var(--radius-sm);
+  margin: 16px 0;
+  color: var(--netflix-text);
+}
+
+.memoria {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.memoria th,
+.memoria td {
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--netflix-border);
+  text-align: left;
+}
+
+.memoria th {
+  color: var(--netflix-red);
+  font-weight: 700;
+}
+
+.memoria td:last-child,
+.memoria th:last-child {
+  text-align: right;
+}
+
+.total {
+  background: var(--netflix-green-bg);
+  border: 1px solid var(--netflix-green-border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+}
+
+.total span {
+  font-weight: bold;
+  color: var(--netflix-text);
+}
+
+.total strong {
+  font-size: 1.5rem;
+  color: var(--netflix-green-text);
+}
+
+/* ==========================================================================
+   7. RODAPÉ 
+   ========================================================================== */
+footer {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background-color: #000000;
+  color: #666666;
+  font-size: 0.85rem;
+  border-top: 1px solid #222222;
+  margin-top: auto;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE 
+   ========================================================================== */
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .resumo {
+    grid-template-columns: repeat(4, 1fr); 
+  }
+
+  .campo-full {
+    grid-column: 1 / -1;
+  }
+
+  .acoes {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .btn {
+    min-width: 180px;
+  }
+}
+
+@media (min-width: 768px) {
+  .topo h1 {
+    font-size: 2.75rem;
+  }
+
+  .card {
+    padding: 2.5rem;
+  }
+}
