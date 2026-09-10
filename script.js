@@ -1,3 +1,31 @@
+const inputTexto = document.getElementById('cliente');
+
+inputTexto.addEventListener('input', (e) => {
+    // Remove tudo o que NÃO for letra (A-Z) ou espaço
+    e.target.value = e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+});
+
+const inputTexto1 = document.getElementById('origem');
+
+inputTexto1.addEventListener('input', (e) => {
+    // Remove tudo o que NÃO for letra (A-Z) ou espaço
+    e.target.value = e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+});
+
+const inputTexto2 = document.getElementById('destino');
+
+  inputTexto2.addEventListener('input', (e) => {
+    // Remove tudo o que NÃO for letra (A-Z) ou espaço
+    e.target.value = e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+  });
+
+      const inputTexto3 = document.getElementById('mercadoria');
+
+  inputTexto3.addEventListener('input', (e) => {
+    // Remove tudo o que NÃO for letra (A-Z) ou espaço
+    e.target.value = e.target.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, '');
+  });
+
 const form = document.getElementById("formFrete");
 const resultado = document.getElementById("resultado");
 const mensagem = document.getElementById("mensagem");
