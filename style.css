@@ -1,6 +1,6 @@
-/* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E VARIÁVEIS (NETFLIX DESIGN SYSTEM)
-   ========================================================================== */
+/*
+   CONFIGURAÇÃO VISUAL DA NETFLIX
+ */
 :root {
   /* Paleta de Cores Netflix */
   --netflix-red: #e50914;
@@ -41,9 +41,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ==========================================================================
-   2. CABEÇALHO (HEADER)
-   ========================================================================== */
 .topo {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0) 100%),
               radial-gradient(ellipse at center, rgba(229, 9, 20, 0.15) 0%, rgba(20, 20, 20, 0) 70%);
@@ -79,9 +76,6 @@ body {
   color: var(--netflix-text-muted);
 }
 
-/* ==========================================================================
-   3. ESTRUTURA PRINCIPAL (LAYOUT)
-   ========================================================================== */
 .container {
   width: 100%;
   max-width: 900px;
@@ -110,7 +104,7 @@ body {
   gap: 0.5rem;
 }
 
-/* Destaque vermelho ao lado dos títulos das seções */
+
 .card h2::before {
   content: "";
   display: inline-block;
@@ -126,9 +120,6 @@ body {
   margin-bottom: 1.25rem;
 }
 
-/* ==========================================================================
-   4. FORMULÁRIO E INPUTS
-   ========================================================================== */
 .grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -174,9 +165,6 @@ body {
   margin-top: 0.35rem;
 }
 
-/* ==========================================================================
-   5. MENSAGENS E BOTÕES
-   ========================================================================== */
 .mensagem {
   margin-bottom: 1.25rem;
   padding: 1rem;
@@ -228,7 +216,6 @@ body {
   transform: scale(0.98);
 }
 
-/* Botão Secundário - Estilo Transparente / Cinza */
 .btn-secundario {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--netflix-text);
@@ -244,14 +231,10 @@ body {
   transform: scale(0.98);
 }
 
-/* ==========================================================================
-   6. SEÇÃO DE RESULTADOS E TABELA (CORRIGIDOS)
-   ========================================================================== */
 .resultado[hidden] {
   display: none;
 }
 
-/* Mobile-First: 2 colunas no celular */
 .resumo {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -332,9 +315,6 @@ body {
   color: var(--netflix-green-text);
 }
 
-/* ==========================================================================
-   7. RODAPÉ 
-   ========================================================================== */
 footer {
   text-align: center;
   padding: 2.5rem 1rem;
@@ -345,9 +325,6 @@ footer {
   margin-top: auto;
 }
 
-/* ==========================================================================
-   8. RESPONSIVIDADE 
-   ========================================================================== */
 @media (min-width: 600px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
