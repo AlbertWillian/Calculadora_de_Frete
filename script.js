@@ -13,12 +13,10 @@ const numero = new Intl.NumberFormat("pt-BR", {
     maximumFractionDigits: 2
 });
 
-// Converte o valor de um input numérico para Number.
 function lerNumero(id) {
     return Number(document.getElementById(id).value);
 }
 
-// Lê todos os dados do formulário.
 function obterDados() {
     return {
         cliente: document.getElementById("cliente").value.trim(),
@@ -44,7 +42,6 @@ function obterDados() {
     };
 }
 
-// Verifica se os dados obrigatórios estão corretos.
 function validarDados(dados) {
     const erros = [];
 
@@ -109,22 +106,18 @@ function validarDados(dados) {
     return erros;
 }
 
-// Calcula o volume ocupado por cada volume da carga.
 function calcularVolume(dados) {
     return dados.comprimento * dados.largura * dados.altura;
 }
 
-// Fórmula da imagem: comprimento × largura × altura × fator de cubagem.
 function calcularPesoCubadoUnitario(dados) {
     return calcularVolume(dados) * dados.fatorCubagem;
 }
 
-// Peso cubado total = peso cubado unitário × quantidade.
 function calcularPesoCubadoTotal(dados) {
     return calcularPesoCubadoUnitario(dados) * dados.volumes;
 }
 
-// O maior valor entre peso real e peso cubado será cobrado.
 function determinarPesoCobranca(dados, pesoCubadoTotal) {
     if (dados.pesoReal >= pesoCubadoTotal) {
         return {
@@ -141,12 +134,10 @@ function determinarPesoCobranca(dados, pesoCubadoTotal) {
     };
 }
 
-// Frete-peso = peso de cobrança × tarifa.
 function calcularFretePeso(pesoCobranca, tarifaKg) {
     return pesoCobranca * tarifaKg;
 }
 
-// Aplica o frete mínimo quando o frete-peso fica abaixo dele.
 function aplicarFreteMinimo(fretePeso, freteMinimo) {
     if (fretePeso < freteMinimo) {
         return {
@@ -161,7 +152,6 @@ function aplicarFreteMinimo(fretePeso, freteMinimo) {
     };
 }
 
-// Ad Valorem e GRIS são calculados sobre o valor da nota fiscal.
 function calcularTaxas(dados) {
     const valorAdValorem = dados.notaFiscal * (dados.adValorem / 100);
     const valorGris = dados.notaFiscal * (dados.gris / 100);
@@ -174,7 +164,6 @@ function calcularTaxas(dados) {
     };
 }
 
-// Soma a base do frete com todas as taxas.
 function calcularTotal(freteBase, taxas) {
     return freteBase +
         taxas.adValorem +
