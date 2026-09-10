@@ -217,7 +217,7 @@ function mostrarResultado(dados, calculos) {
         : "Não — o frete-peso já atingiu o mínimo.";
 
     resultado.innerHTML = `
-        <h2>Memória de cálculo</h2>
+        <h2>Cálculo Efetuado com Sucesso!</h2>
 
         <div class="criterio">
             <strong>Cotação:</strong> ${dados.cliente}<br>
