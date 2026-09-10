@@ -217,8 +217,8 @@ function mostrarResultado(dados, calculos) {
         : "Não — o frete-peso já atingiu o mínimo.";
 
     resultado.innerHTML = `
-        <h2>Cálculo Efetuado com Sucesso!</h2>
-
+        <h2>Cálculo Conclúido com Sucesso!</h2>
+        <h2>Confira os resultados abaixo</h2>
         <div class="criterio">
             <strong>Cotação:</strong> ${dados.cliente}<br>
             <strong>Rota:</strong> ${dados.origem} → ${dados.destino}<br>
@@ -311,7 +311,7 @@ function mostrarResultado(dados, calculos) {
         <div class="criterio">
             <strong>Aplicação do frete mínimo:</strong> ${freteMinimoTexto}
         </div>
-
+        <h1><strong>Matemática feita! Aqui está o seu resultado final.</strong></h1>
         <div class="total">
             <span>VALOR TOTAL DA COTAÇÃO</span>
             <strong>${moeda.format(calculos.total)}</strong>
