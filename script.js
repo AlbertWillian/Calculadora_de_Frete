@@ -311,7 +311,7 @@ function mostrarResultado(dados, calculos) {
         <div class="criterio">
             <strong>Aplicação do frete mínimo:</strong> ${freteMinimoTexto}
         </div>
-        <h1><strong>Matemática feita! Aqui está o seu resultado final.</strong></h1>
+        <h1><strong>Matemática feita! Aqui está o seu resultado final</strong></h1>
         <div class="total">
             <span>VALOR TOTAL DA COTAÇÃO</span>
             <strong>${moeda.format(calculos.total)}</strong>
