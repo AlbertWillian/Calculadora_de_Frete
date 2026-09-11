@@ -56,7 +56,7 @@ body {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(20, 20, 20, 0) 100%),
               radial-gradient(ellipse at center, rgba(229, 9, 20, 0.15) 0%, rgba(20, 20, 20, 0) 70%);
   padding: 3rem 1.5rem 2rem 1.5rem;
-  text-align: center;
+  text-align: left;
   border-bottom: 2px solid var(--netflix-red);
 }
 
