@@ -30,6 +30,22 @@ const form = document.getElementById("formFrete");
 const resultado = document.getElementById("resultado");
 const mensagem = document.getElementById("mensagem");
 const btnLimpar = document.getElementById("btnLimpar");
+const btnTema = document.getElementById("btnTema");
+
+function atualizarTema(modoClaro) {
+    document.body.classList.toggle("tema-claro", modoClaro);
+    btnTema.textContent = modoClaro ? "Modo escuro" : "Modo claro";
+    btnTema.setAttribute("aria-label", modoClaro ? "Ativar modo escuro" : "Ativar modo claro");
+}
+
+const modoClaroSalvo = localStorage.getItem("modoClaro") === "true";
+atualizarTema(modoClaroSalvo);
+
+btnTema.addEventListener("click", function () {
+    const modoClaro = !document.body.classList.contains("tema-claro");
+    atualizarTema(modoClaro);
+    localStorage.setItem("modoClaro", modoClaro);
+});
 
 const moeda = new Intl.NumberFormat("pt-BR", {
     style: "currency",
