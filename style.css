@@ -76,11 +76,13 @@ body {
   font-size: 0.9rem;
   font-weight: 700;
   transition: var(--transition);
+  box-shadow: var(--shadow-netflix);
 }
 
 .btn-tema:hover {
   border-color: var(--netflix-red);
   color: var(--netflix-red);
+  box-shadow: var(--shadow-netflix);
 }
 
 .topo > div {
@@ -180,6 +182,7 @@ body {
   font-size: 0.95rem;
   color: var(--netflix-text);
   transition: var(--transition);
+  box-shadow: var(--shadow-netflix);
 }
 
 .campo input::placeholder {
@@ -247,6 +250,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-shadow: var(--shadow-netflix);
 }
 
 /* Botão Principal - Netflix Red */
