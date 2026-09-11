@@ -82,6 +82,7 @@ body {
 .btn-tema:hover {
   border-color: var(--netflix-red);
   color: var(--netflix-red);
+  transform: scale(1.02);
   box-shadow: var(--shadow-netflix);
 }
 
